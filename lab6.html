@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Division Bell</title>
+        <style type="text/css">
+
+			canvas
+			{
+				border: 4px solid black;
+			}
+
+		</style>
+    </head>
+    <body>
+        <canvas id="canvas" width="1024" height="768"></canvas>
+        
+        <script type="text/javascript">
+            
+            //Setting up variables
+            var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+            
+            //Drawing the background
+            context.fillStyle = "rgb(100, 100, 200)"
+            context.strokeStyle = "rgb(0, 0, 0)";
+            context.lineWidth = 2;
+            
+            context.strokeRect(70, 40, 884, 480);
+            context.fillRect(70, 40, 884, 480);
+            context.fillStyle = "rgb(0, 75, 0)";
+            context.strokeRect(70, 520, 884, 208);
+            context.fillRect(70, 520, 884, 208);
+            
+            
+            //-----------------LEFT HEAD----------------------// 
+            
+            //Setting up colours 
+            context.strokeStyle = "rgb(200, 120, 0)";
+            context.fillStyle = "rgb(210, 200, 155)";
+            context.lineWidth = 10;
+            
+            //Starts drawing the head from the bottom right corner
+            context.beginPath();
+            context.moveTo(430, 700);
+            
+            context.lineTo(450, 600);
+            
+            //Mouth
+            context.quadraticCurveTo(400, 600, 380, 550);
+            context.quadraticCurveTo(400, 500, 450, 500);
+            
+            //Nose
+            context.lineTo(440, 450);
+            context.lineTo(480, 450);
+            context.quadraticCurveTo(480, 400, 450, 300);
+            
+            //Forehead, top and back of the head
+            context.lineTo(470, 290);
+            context.quadraticCurveTo(470, 230, 460, 200);
+            context.quadraticCurveTo(350, 0, 200, 100);
+            context.quadraticCurveTo(50, 250, 200, 450);
+            
+            //Neck and shoulder
+            context.quadraticCurveTo(180, 500, 200, 550);
+            context.quadraticCurveTo(130, 600, 130, 700);
+            context.lineTo(430, 700);
+            context.closePath();
+            
+            context.stroke();
+            context.fill();
+            
+            //Eye
+            context.fillStyle = "rgb(255, 255, 255)";
+            context.strokeStyle = "rgb(100, 60, 0)"
+            context.lineWidth = 5;
+            context.beginPath();
+            
+            context.moveTo(400, 300);
+            context.quadraticCurveTo(350, 280, 270, 300);
+            context.quadraticCurveTo(320, 410, 400, 300);
+            
+            context.closePath();
+            
+            context.stroke();
+            context.fill();
+            
+            context.fillStyle = "rgb(155, 0, 0)";
+            context.beginPath();
+            context.arc(330, 320, 15, 0, 2 * Math.PI);
+            context.closePath();
+            context.fill();
+            
+            //Adding texture around the nose and shoulder
+            
+            context.strokeStyle = "rgb(200, 120, 0)";
+            context.beginPath();
+            context.lineWidth = 3;
+            context.moveTo(440, 450);
+            context.quadraticCurveTo(440, 400, 400, 400);
+            context.quadraticCurveTo(380, 420, 380, 450);
+            context.lineTo(440, 450)
+            context.closePath();
+            context.stroke();
+            
+            context.moveTo(380, 450);
+            context.quadraticCurveTo(330, 500, 340, 550);
+            context.quadraticCurveTo(230, 530, 200, 450);
+            
+            context.stroke();
+            
+            context.moveTo(200, 550);
+            context.quadraticCurveTo(280, 700, 430, 700);
+            context.stroke();
+            
+            //Adding texture around the eye
+            context.lineWidth = 1;
+            context.moveTo(420, 300);
+            context.quadraticCurveTo(320, 250, 200, 300);
+            context.quadraticCurveTo(300, 500, 420, 300);
+            context.stroke();
+            
+            //-----------------LEFT HEAD END------------------//
+            
+            
+            //Flipping and translating the axis/scale
+            
+            context.translate(1024, 0);
+            context.scale(-1, 1);
+            
+            
+            //-----------------RIGHT HEAD----------------------//
+            
+            
+            
+            //Setting up colours 
+            context.strokeStyle = "rgb(200, 120, 0)";
+            context.fillStyle = "rgb(210, 200, 155)";
+            context.lineWidth = 10;
+            
+            //Starts drawing the head from the bottom left corner
+            context.beginPath();
+            context.moveTo(430, 700);
+            
+            context.lineTo(450, 600);
+            
+            //Mouth
+            context.quadraticCurveTo(400, 600, 380, 550);
+            context.quadraticCurveTo(400, 500, 450, 500);
+            
+            //Nose
+            context.lineTo(440, 450);
+            context.lineTo(480, 450);
+            context.quadraticCurveTo(480, 400, 450, 300);
+            
+            //Forehead, top and back of the head
+            context.lineTo(470, 290);
+            context.quadraticCurveTo(470, 230, 460, 200);
+            context.quadraticCurveTo(350, 0, 200, 100);
+            context.quadraticCurveTo(50, 250, 200, 450);
+            
+            //Neck and shoulder
+            context.quadraticCurveTo(180, 500, 200, 550);
+            context.quadraticCurveTo(130, 600, 130, 700);
+            context.lineTo(430, 700);
+            context.closePath();
+            
+            context.stroke();
+            context.fill();
+            
+            //Eye
+            context.fillStyle = "rgb(255, 255, 255)";
+            context.strokeStyle = "rgb(100, 60, 0)"
+            context.lineWidth = 5;
+            context.beginPath();
+            
+            context.moveTo(400, 300);
+            context.quadraticCurveTo(350, 280, 270, 300);
+            context.quadraticCurveTo(320, 410, 400, 300);
+            
+            context.closePath();
+            
+            context.stroke();
+            context.fill();
+            
+            context.fillStyle = "rgb(155, 0, 0)";
+            context.beginPath();
+            context.arc(330, 320, 15, 0, 2 * Math.PI);
+            context.closePath();
+            context.fill();
+            
+            //Adding texture around the nose and shoulder
+            
+            context.strokeStyle = "rgb(200, 120, 0)";
+            context.beginPath();
+            context.lineWidth = 3;
+            context.moveTo(440, 450);
+            context.quadraticCurveTo(440, 400, 400, 400);
+            context.quadraticCurveTo(380, 420, 380, 450);
+            context.lineTo(440, 450)
+            context.closePath();
+            context.stroke();
+            
+            context.moveTo(380, 450);
+            context.quadraticCurveTo(330, 500, 340, 550);
+            context.quadraticCurveTo(230, 530, 200, 450);
+            
+            context.stroke();
+            
+            context.moveTo(200, 550);
+            context.quadraticCurveTo(280, 700, 430, 700);
+            context.stroke();
+            
+            //Adding texture around the eye
+            context.lineWidth = 1;
+            context.moveTo(420, 300);
+            context.quadraticCurveTo(320, 250, 200, 300);
+            context.quadraticCurveTo(300, 500, 420, 300);
+            context.stroke();
+            
+            //-----------------RIGHT HEAD END------------------//
+            
+        </script>
+    </body>
+</html>
